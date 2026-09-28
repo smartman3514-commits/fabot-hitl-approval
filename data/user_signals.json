@@ -10,6 +10,83 @@
       "cooldown_override": false,
       "available_capital_krw": 30000000,
       "held_value_krw": null
+    },
+    {
+      "id": "U002",
+      "date": "2026-09-28",
+      "fg_score": 80.0,
+      "asset": "TQQQ",
+      "action": "sell",
+      "tier_pct": 1.0,
+      "cooldown_override": false,
+      "available_capital_krw": null,
+      "held_value_krw": 50000000
+    },
+    {
+      "id": "U003",
+      "date": "2026-09-28",
+      "fg_score": 50.0,
+      "asset": "TQQQ",
+      "action": "buy",
+      "tier_pct": 1.0,
+      "cooldown_override": false,
+      "available_capital_krw": 30000000,
+      "held_value_krw": null
+    },
+    {
+      "id": "U004",
+      "date": "2026-09-28",
+      "fg_score": 50.0,
+      "asset": "TQQQ",
+      "action": "buy",
+      "tier_pct": 1.0,
+      "cooldown_override": false,
+      "available_capital_krw": 30000000,
+      "held_value_krw": null
+    },
+    {
+      "id": "U005",
+      "date": "2026-09-28",
+      "fg_score": 50.0,
+      "asset": "TQQQ",
+      "action": "buy",
+      "tier_pct": 1.0,
+      "cooldown_override": false,
+      "available_capital_krw": 30000000,
+      "held_value_krw": null
+    },
+    {
+      "id": "U006",
+      "date": "2026-09-28",
+      "fg_score": 10.0,
+      "asset": "TQQQ",
+      "action": "buy",
+      "tier_pct": 1.0,
+      "cooldown_override": false,
+      "available_capital_krw": 30000000,
+      "held_value_krw": null
+    },
+    {
+      "id": "U007",
+      "date": "2026-09-28",
+      "fg_score": 15.0,
+      "asset": "TQQQ",
+      "action": "buy",
+      "tier_pct": 1.0,
+      "cooldown_override": false,
+      "available_capital_krw": 30000000,
+      "held_value_krw": null
+    },
+    {
+      "id": "U008",
+      "date": "2026-09-28",
+      "fg_score": 50.0,
+      "asset": "TQQQ",
+      "action": "buy",
+      "tier_pct": 1.0,
+      "cooldown_override": false,
+      "available_capital_krw": 30000000,
+      "held_value_krw": null
     }
   ]
 }

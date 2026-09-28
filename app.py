@@ -54,6 +54,15 @@ def save_user_signal(sig: dict):
                                   encoding="utf-8")
 
 
+def next_user_signal_id() -> str:
+    """길이 기반(len()+1)으로 번호를 매기면, 신호를 여러 번 연달아 넣었을 때(특히 폼이
+    기본값으로 초기화된 채 다시 제출될 때) 같은 번호가 겹칠 여지가 있었다(실사용 중 발견).
+    기존 id들의 숫자 부분 중 최댓값+1로 바꿔서 겹칠 일이 없게 한다."""
+    existing = load_user_signals()
+    nums = [int(it["id"][1:]) for it in existing if it["id"][1:].isdigit()]
+    return f"U{(max(nums) + 1) if nums else 1:03d}"
+
+
 signals = SEED_SIGNALS + load_user_signals()
 by_id = {s["id"]: s for s in signals}
 
@@ -88,7 +97,7 @@ with st.expander("➕ 새 신호 직접 넣기", expanded=False):
             amount_base = st.number_input("보유 평가금액(원)", min_value=0, value=50000000, step=1000000)
         submitted = st.form_submit_button("신호 넣기", type="primary")
         if submitted:
-            new_id = f"U{len(load_user_signals()) + 1:03d}"
+            new_id = next_user_signal_id()
             sig = {
                 "id": new_id, "date": date, "fg_score": fg_score, "asset": asset,
                 "action": action, "tier_pct": tier_pct, "cooldown_override": cooldown_override,
@@ -96,7 +105,8 @@ with st.expander("➕ 새 신호 직접 넣기", expanded=False):
                 "held_value_krw": amount_base if action == "sell" else None,
             }
             save_user_signal(sig)
-            graph.start_signal(sig)
+            with st.spinner(f"{new_id} 신호를 넣고 코디네이터가 판정하는 중입니다... (몇 초~몇십 초 걸려요)"):
+                graph.start_signal(sig)
             st.success(f"{new_id} 신호를 넣었습니다.")
             st.rerun()
 
@@ -113,8 +123,14 @@ with tab_pending:
         st.info("대기 중인 건이 없습니다.")
 
     for sid in pending_ids:
-        sig = by_id[sid]
+        sig = by_id.get(sid)
         payload = graph.pending_payload(sid)
+        if sig is None or payload is None:
+            # 신호를 빠르게 여러 번 연달아 넣었을 때 이 thread_id의 체크포인트 상태가
+            # 일시적으로 꼬여서 대기중으로는 잡히는데 멈춘 지점 정보가 없는 경우를
+            # 실제로 겪었다 — 화면 전체가 죽는 대신 이 건만 건너뛰고 경고만 남긴다.
+            st.warning(f"⚠️ {sid}: 상태를 읽을 수 없어 건너뜁니다(신호를 다시 넣어보세요).")
+            continue
         with st.container(border=True):
             st.subheader(f"{sid} — {payload['요청']}")
             st.markdown(f"**금액**: {payload['금액']}")
