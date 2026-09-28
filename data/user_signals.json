@@ -1,0 +1,15 @@
+{
+  "items": [
+    {
+      "id": "U001",
+      "date": "2026-09-28",
+      "fg_score": 10.0,
+      "asset": "TQQQ",
+      "action": "buy",
+      "tier_pct": 1.0,
+      "cooldown_override": false,
+      "available_capital_krw": 30000000,
+      "held_value_krw": null
+    }
+  ]
+}

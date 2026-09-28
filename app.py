@@ -37,15 +37,33 @@ with st.expander("이 데모에 대해", expanded=False):
         """
     )
 
-signals = json.loads((BASE / "data" / "signals.json").read_text(encoding="utf-8"))["items"]
+SEED_SIGNALS = json.loads((BASE / "data" / "signals.json").read_text(encoding="utf-8"))["items"]
+USER_SIGNALS_PATH = BASE / "data" / "user_signals.json"
+
+
+def load_user_signals() -> list:
+    if USER_SIGNALS_PATH.exists():
+        return json.loads(USER_SIGNALS_PATH.read_text(encoding="utf-8"))["items"]
+    return []
+
+
+def save_user_signal(sig: dict):
+    items = load_user_signals()
+    items.append(sig)
+    USER_SIGNALS_PATH.write_text(json.dumps({"items": items}, ensure_ascii=False, indent=2),
+                                  encoding="utf-8")
+
+
+signals = SEED_SIGNALS + load_user_signals()
 by_id = {s["id"]: s for s in signals}
 
 
 def run_all_if_needed():
-    """세션 시작 시 15건을 전부 한 번 흘려보낸다(멈출 건 멈추고, 자동인 건 끝까지 실행)."""
+    """세션 시작 시 시드 15건을 전부 한 번 흘려보낸다(멈출 건 멈추고, 자동인 건 끝까지 실행).
+    직접 넣은 신호는 제출하는 순간 바로 흘려보내므로 여기서 다시 처리할 필요가 없다."""
     if st.session_state.get("_ran"):
         return
-    for sig in signals:
+    for sig in SEED_SIGNALS:
         snap = graph.get_snapshot(sig["id"])
         if not snap.values:  # 이 thread_id로 아직 한 번도 안 돌렸으면
             graph.start_signal(sig)
@@ -54,9 +72,40 @@ def run_all_if_needed():
 
 run_all_if_needed()
 
+with st.expander("➕ 새 신호 직접 넣기", expanded=False):
+    with st.form("new_signal_form", clear_on_submit=True):
+        c1, c2 = st.columns(2)
+        date = c1.date_input("날짜").isoformat()
+        fg_score = c2.number_input("F&G 점수", min_value=0.0, max_value=100.0, value=50.0, step=1.0)
+        asset = c1.selectbox("자산", ["TQQQ", "커버드콜"])
+        action = c2.selectbox("동작", ["buy", "sell"])
+        tier_pct = c1.selectbox("비중", [1.0, 0.5, 0.25, 0.1],
+                                 format_func=lambda x: f"{x*100:.0f}%")
+        cooldown_override = c2.checkbox("쿨다운 예외 해제로 실행되는 매수")
+        if action == "buy":
+            amount_base = st.number_input("가용 실탄(원)", min_value=0, value=30000000, step=1000000)
+        else:
+            amount_base = st.number_input("보유 평가금액(원)", min_value=0, value=50000000, step=1000000)
+        submitted = st.form_submit_button("신호 넣기", type="primary")
+        if submitted:
+            new_id = f"U{len(load_user_signals()) + 1:03d}"
+            sig = {
+                "id": new_id, "date": date, "fg_score": fg_score, "asset": asset,
+                "action": action, "tier_pct": tier_pct, "cooldown_override": cooldown_override,
+                "available_capital_krw": amount_base if action == "buy" else None,
+                "held_value_krw": amount_base if action == "sell" else None,
+            }
+            save_user_signal(sig)
+            graph.start_signal(sig)
+            st.success(f"{new_id} 신호를 넣었습니다.")
+            st.rerun()
+
 tab_pending, tab_history = st.tabs(["승인 대기", "처리 이력"])
 
 with tab_pending:
+    # by_id에 방금 넣은 신호도 반영되도록 매번 새로 불러온다(폼 제출 직후 rerun에서도 최신 상태 유지).
+    signals = SEED_SIGNALS + load_user_signals()
+    by_id = {s["id"]: s for s in signals}
     pending_ids = [s["id"] for s in signals if graph.is_pending(s["id"])]
     st.write(f"**대기 중 {len(pending_ids)}건** / 전체 {len(signals)}건")
 

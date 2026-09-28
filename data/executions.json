@@ -140,6 +140,16 @@
       "auto": false,
       "human_decision": "modify",
       "executed_at": "2026-09-28T04:41:32.689676+00:00"
+    },
+    {
+      "signal_id": "S15",
+      "date": "2026-09-18",
+      "asset": "TQQQ",
+      "action": "buy",
+      "amount_krw": 21000000,
+      "auto": false,
+      "human_decision": "approve",
+      "executed_at": "2026-09-28T05:18:34.578366+00:00"
     }
   ]
 }
