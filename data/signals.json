@@ -1,0 +1,19 @@
+{
+  "items": [
+    {"id": "S01", "date": "2011-08-22", "fg_score": 7.0, "asset": "TQQQ", "action": "buy", "tier_pct": 1.0, "cooldown_override": false, "available_capital_krw": 42000000, "held_value_krw": null},
+    {"id": "S02", "date": "2012-06-05", "fg_score": 14.0, "asset": "TQQQ", "action": "buy", "tier_pct": 1.0, "cooldown_override": false, "available_capital_krw": 38000000, "held_value_krw": null},
+    {"id": "S03", "date": "2015-09-16", "fg_score": 16.0, "asset": "TQQQ", "action": "buy", "tier_pct": 0.5, "cooldown_override": false, "available_capital_krw": 42000000, "held_value_krw": null},
+    {"id": "S04", "date": "2016-01-11", "fg_score": 17.0, "asset": "TQQQ", "action": "buy", "tier_pct": 0.5, "cooldown_override": false, "available_capital_krw": 30000000, "held_value_krw": null},
+    {"id": "S05", "date": "2025-01-02", "fg_score": 24.31, "asset": "TQQQ", "action": "buy", "tier_pct": 0.25, "cooldown_override": false, "available_capital_krw": 42000000, "held_value_krw": null},
+    {"id": "S06", "date": "2014-12-15", "fg_score": 22.0, "asset": "TQQQ", "action": "buy", "tier_pct": 0.25, "cooldown_override": false, "available_capital_krw": 30000000, "held_value_krw": null},
+    {"id": "S07", "date": "2016-09-29", "fg_score": 44.0, "asset": "커버드콜", "action": "buy", "tier_pct": 0.1, "cooldown_override": false, "available_capital_krw": 15000000, "held_value_krw": null},
+    {"id": "S08", "date": "2010-11-16", "fg_score": 55.27, "asset": "커버드콜", "action": "buy", "tier_pct": 0.1, "cooldown_override": false, "available_capital_krw": 15000000, "held_value_krw": null},
+    {"id": "S09", "date": "2012-12-03", "fg_score": 45.0, "asset": "커버드콜", "action": "buy", "tier_pct": 0.1, "cooldown_override": false, "available_capital_krw": 18000000, "held_value_krw": null},
+    {"id": "S10", "date": "2010-11-02", "fg_score": 62.75, "asset": "커버드콜", "action": "buy", "tier_pct": 0.1, "cooldown_override": false, "available_capital_krw": 18000000, "held_value_krw": null},
+    {"id": "S11", "date": "2024-01-04", "fg_score": 78.69, "asset": "TQQQ", "action": "sell", "tier_pct": 0.5, "cooldown_override": false, "available_capital_krw": null, "held_value_krw": 80000000},
+    {"id": "S12", "date": "2024-02-29", "fg_score": 77.46, "asset": "TQQQ", "action": "sell", "tier_pct": 0.5, "cooldown_override": false, "available_capital_krw": null, "held_value_krw": 65000000},
+    {"id": "S13", "date": "2012-02-08", "fg_score": 86.0, "asset": "TQQQ", "action": "sell", "tier_pct": 1.0, "cooldown_override": false, "available_capital_krw": null, "held_value_krw": 80000000},
+    {"id": "S14", "date": "2016-07-29", "fg_score": 80.0, "asset": "TQQQ", "action": "sell", "tier_pct": 1.0, "cooldown_override": false, "available_capital_krw": null, "held_value_krw": 55000000},
+    {"id": "S15", "date": "2026-09-18", "fg_score": 24.0, "asset": "TQQQ", "action": "buy", "tier_pct": 0.5, "cooldown_override": true, "available_capital_krw": 42000000, "held_value_krw": null, "note": "F&G 29→24로 단계 경계를 넘어 쿨다운 해제된 실제 케이스(2026-09-18 규칙)"}
+  ]
+}

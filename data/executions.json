@@ -1,0 +1,145 @@
+{
+  "items": [
+    {
+      "signal_id": "S03",
+      "date": "2015-09-16",
+      "asset": "TQQQ",
+      "action": "buy",
+      "amount_krw": 21000000,
+      "auto": true,
+      "human_decision": null,
+      "executed_at": "2026-09-28T04:29:11.873113+00:00"
+    },
+    {
+      "signal_id": "S04",
+      "date": "2016-01-11",
+      "asset": "TQQQ",
+      "action": "buy",
+      "amount_krw": 15000000,
+      "auto": true,
+      "human_decision": null,
+      "executed_at": "2026-09-28T04:29:55.808907+00:00"
+    },
+    {
+      "signal_id": "S05",
+      "date": "2025-01-02",
+      "asset": "TQQQ",
+      "action": "buy",
+      "amount_krw": 10500000,
+      "auto": true,
+      "human_decision": null,
+      "executed_at": "2026-09-28T04:30:39.994873+00:00"
+    },
+    {
+      "signal_id": "S06",
+      "date": "2014-12-15",
+      "asset": "TQQQ",
+      "action": "buy",
+      "amount_krw": 7500000,
+      "auto": true,
+      "human_decision": null,
+      "executed_at": "2026-09-28T04:31:24.622817+00:00"
+    },
+    {
+      "signal_id": "S07",
+      "date": "2016-09-29",
+      "asset": "커버드콜",
+      "action": "buy",
+      "amount_krw": 1500000,
+      "auto": true,
+      "human_decision": null,
+      "executed_at": "2026-09-28T04:32:07.839861+00:00"
+    },
+    {
+      "signal_id": "S08",
+      "date": "2010-11-16",
+      "asset": "커버드콜",
+      "action": "buy",
+      "amount_krw": 1500000,
+      "auto": true,
+      "human_decision": null,
+      "executed_at": "2026-09-28T04:32:47.005212+00:00"
+    },
+    {
+      "signal_id": "S09",
+      "date": "2012-12-03",
+      "asset": "커버드콜",
+      "action": "buy",
+      "amount_krw": 1800000,
+      "auto": true,
+      "human_decision": null,
+      "executed_at": "2026-09-28T04:33:29.790283+00:00"
+    },
+    {
+      "signal_id": "S10",
+      "date": "2010-11-02",
+      "asset": "커버드콜",
+      "action": "buy",
+      "amount_krw": 1800000,
+      "auto": true,
+      "human_decision": null,
+      "executed_at": "2026-09-28T04:34:11.859044+00:00"
+    },
+    {
+      "signal_id": "S11",
+      "date": "2024-01-04",
+      "asset": "TQQQ",
+      "action": "sell",
+      "amount_krw": 40000000,
+      "auto": true,
+      "human_decision": null,
+      "executed_at": "2026-09-28T04:34:56.299255+00:00"
+    },
+    {
+      "signal_id": "S12",
+      "date": "2024-02-29",
+      "asset": "TQQQ",
+      "action": "sell",
+      "amount_krw": 32500000,
+      "auto": true,
+      "human_decision": null,
+      "executed_at": "2026-09-28T04:35:39.147092+00:00"
+    },
+    {
+      "signal_id": "S01",
+      "date": "2011-08-22",
+      "asset": "TQQQ",
+      "action": "buy",
+      "amount_krw": 42000000,
+      "auto": false,
+      "human_decision": "approve",
+      "executed_at": "2026-09-28T04:38:53.272504+00:00"
+    },
+    {
+      "signal_id": "S02",
+      "date": "2012-06-05",
+      "asset": "TQQQ",
+      "action": "buy",
+      "amount_krw": 0,
+      "auto": false,
+      "human_decision": "reject",
+      "reject_reason": "2012-06-05는 유럽 재정위기 국면이라 F&G 14점이 단순 공포가 아니라 구조적 위험 신호일 수 있어 이번 건은 보류함",
+      "executed_at": "2026-09-28T04:39:54.182987+00:00"
+    },
+    {
+      "signal_id": "S13",
+      "date": "2012-02-08",
+      "asset": "TQQQ",
+      "action": "sell",
+      "amount_krw": 80000000,
+      "auto": false,
+      "human_decision": "approve",
+      "executed_at": "2026-09-28T04:40:57.591990+00:00"
+    },
+    {
+      "signal_id": "S14",
+      "date": "2016-07-29",
+      "asset": "TQQQ",
+      "action": "sell",
+      "amount_krw": 40000000,
+      "auto": false,
+      "human_decision": "modify",
+      "executed_at": "2026-09-28T04:41:32.689676+00:00"
+    }
+  ]
+}
