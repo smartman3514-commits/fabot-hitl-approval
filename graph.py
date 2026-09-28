@@ -204,7 +204,9 @@ def execute(state: State) -> dict:
     sig = state["signal"]
     amount = state.get("final_amount_krw") or state["amount_krw"]
     _append_ledger({
-        "signal_id": sig["id"], "date": sig["date"], "asset": sig["asset"], "action": sig["action"],
+        "signal_id": sig["id"], "date": sig["date"], "fg_score": sig["fg_score"],
+        "asset": sig["asset"], "action": sig["action"], "tier_pct": sig["tier_pct"],
+        "cooldown_override": sig.get("cooldown_override", False),
         "amount_krw": amount, "auto": not state["needs_approval"],
         "human_decision": state.get("human_decision"),
         "executed_at": datetime.now(timezone.utc).isoformat(),
@@ -214,10 +216,12 @@ def execute(state: State) -> dict:
 
 
 def reject(state: State) -> dict:
+    sig = state["signal"]
     reason = state.get("human_feedback") or "재판정 한도 초과"
     _append_ledger({
-        "signal_id": state["signal"]["id"], "date": state["signal"]["date"],
-        "asset": state["signal"]["asset"], "action": state["signal"]["action"],
+        "signal_id": sig["id"], "date": sig["date"], "fg_score": sig["fg_score"],
+        "asset": sig["asset"], "action": sig["action"], "tier_pct": sig["tier_pct"],
+        "cooldown_override": sig.get("cooldown_override", False),
         "amount_krw": 0, "auto": False, "human_decision": state.get("human_decision"),
         "reject_reason": reason, "executed_at": datetime.now(timezone.utc).isoformat(),
     })

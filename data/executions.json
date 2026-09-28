@@ -8,7 +8,10 @@
       "amount_krw": 21000000,
       "auto": true,
       "human_decision": null,
-      "executed_at": "2026-09-28T04:29:11.873113+00:00"
+      "executed_at": "2026-09-28T04:29:11.873113+00:00",
+      "fg_score": 16.0,
+      "tier_pct": 0.5,
+      "cooldown_override": false
     },
     {
       "signal_id": "S04",
@@ -18,7 +21,10 @@
       "amount_krw": 15000000,
       "auto": true,
       "human_decision": null,
-      "executed_at": "2026-09-28T04:29:55.808907+00:00"
+      "executed_at": "2026-09-28T04:29:55.808907+00:00",
+      "fg_score": 17.0,
+      "tier_pct": 0.5,
+      "cooldown_override": false
     },
     {
       "signal_id": "S05",
@@ -28,7 +34,10 @@
       "amount_krw": 10500000,
       "auto": true,
       "human_decision": null,
-      "executed_at": "2026-09-28T04:30:39.994873+00:00"
+      "executed_at": "2026-09-28T04:30:39.994873+00:00",
+      "fg_score": 24.31,
+      "tier_pct": 0.25,
+      "cooldown_override": false
     },
     {
       "signal_id": "S06",
@@ -38,7 +47,10 @@
       "amount_krw": 7500000,
       "auto": true,
       "human_decision": null,
-      "executed_at": "2026-09-28T04:31:24.622817+00:00"
+      "executed_at": "2026-09-28T04:31:24.622817+00:00",
+      "fg_score": 22.0,
+      "tier_pct": 0.25,
+      "cooldown_override": false
     },
     {
       "signal_id": "S07",
@@ -48,7 +60,10 @@
       "amount_krw": 1500000,
       "auto": true,
       "human_decision": null,
-      "executed_at": "2026-09-28T04:32:07.839861+00:00"
+      "executed_at": "2026-09-28T04:32:07.839861+00:00",
+      "fg_score": 44.0,
+      "tier_pct": 0.1,
+      "cooldown_override": false
     },
     {
       "signal_id": "S08",
@@ -58,7 +73,10 @@
       "amount_krw": 1500000,
       "auto": true,
       "human_decision": null,
-      "executed_at": "2026-09-28T04:32:47.005212+00:00"
+      "executed_at": "2026-09-28T04:32:47.005212+00:00",
+      "fg_score": 55.27,
+      "tier_pct": 0.1,
+      "cooldown_override": false
     },
     {
       "signal_id": "S09",
@@ -68,7 +86,10 @@
       "amount_krw": 1800000,
       "auto": true,
       "human_decision": null,
-      "executed_at": "2026-09-28T04:33:29.790283+00:00"
+      "executed_at": "2026-09-28T04:33:29.790283+00:00",
+      "fg_score": 45.0,
+      "tier_pct": 0.1,
+      "cooldown_override": false
     },
     {
       "signal_id": "S10",
@@ -78,7 +99,10 @@
       "amount_krw": 1800000,
       "auto": true,
       "human_decision": null,
-      "executed_at": "2026-09-28T04:34:11.859044+00:00"
+      "executed_at": "2026-09-28T04:34:11.859044+00:00",
+      "fg_score": 62.75,
+      "tier_pct": 0.1,
+      "cooldown_override": false
     },
     {
       "signal_id": "S11",
@@ -88,7 +112,10 @@
       "amount_krw": 40000000,
       "auto": true,
       "human_decision": null,
-      "executed_at": "2026-09-28T04:34:56.299255+00:00"
+      "executed_at": "2026-09-28T04:34:56.299255+00:00",
+      "fg_score": 78.69,
+      "tier_pct": 0.5,
+      "cooldown_override": false
     },
     {
       "signal_id": "S12",
@@ -98,7 +125,10 @@
       "amount_krw": 32500000,
       "auto": true,
       "human_decision": null,
-      "executed_at": "2026-09-28T04:35:39.147092+00:00"
+      "executed_at": "2026-09-28T04:35:39.147092+00:00",
+      "fg_score": 77.46,
+      "tier_pct": 0.5,
+      "cooldown_override": false
     },
     {
       "signal_id": "S01",
@@ -108,7 +138,10 @@
       "amount_krw": 42000000,
       "auto": false,
       "human_decision": "approve",
-      "executed_at": "2026-09-28T04:38:53.272504+00:00"
+      "executed_at": "2026-09-28T04:38:53.272504+00:00",
+      "fg_score": 7.0,
+      "tier_pct": 1.0,
+      "cooldown_override": false
     },
     {
       "signal_id": "S02",
@@ -119,7 +152,10 @@
       "auto": false,
       "human_decision": "reject",
       "reject_reason": "2012-06-05는 유럽 재정위기 국면이라 F&G 14점이 단순 공포가 아니라 구조적 위험 신호일 수 있어 이번 건은 보류함",
-      "executed_at": "2026-09-28T04:39:54.182987+00:00"
+      "executed_at": "2026-09-28T04:39:54.182987+00:00",
+      "fg_score": 14.0,
+      "tier_pct": 1.0,
+      "cooldown_override": false
     },
     {
       "signal_id": "S13",
@@ -129,7 +165,10 @@
       "amount_krw": 80000000,
       "auto": false,
       "human_decision": "approve",
-      "executed_at": "2026-09-28T04:40:57.591990+00:00"
+      "executed_at": "2026-09-28T04:40:57.591990+00:00",
+      "fg_score": 86.0,
+      "tier_pct": 1.0,
+      "cooldown_override": false
     },
     {
       "signal_id": "S14",
@@ -139,7 +178,10 @@
       "amount_krw": 40000000,
       "auto": false,
       "human_decision": "modify",
-      "executed_at": "2026-09-28T04:41:32.689676+00:00"
+      "executed_at": "2026-09-28T04:41:32.689676+00:00",
+      "fg_score": 80.0,
+      "tier_pct": 1.0,
+      "cooldown_override": false
     },
     {
       "signal_id": "S15",
@@ -149,7 +191,23 @@
       "amount_krw": 21000000,
       "auto": false,
       "human_decision": "approve",
-      "executed_at": "2026-09-28T05:18:34.578366+00:00"
+      "executed_at": "2026-09-28T05:18:34.578366+00:00",
+      "fg_score": 24.0,
+      "tier_pct": 0.5,
+      "cooldown_override": true
+    },
+    {
+      "signal_id": "U001",
+      "date": "2026-09-28",
+      "asset": "TQQQ",
+      "action": "buy",
+      "amount_krw": 30000000,
+      "auto": false,
+      "human_decision": "approve",
+      "executed_at": "2026-09-28T05:25:31.646688+00:00",
+      "fg_score": 10.0,
+      "tier_pct": 1.0,
+      "cooldown_override": false
     }
   ]
 }
